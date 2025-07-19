@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: RedisDemoApplication
+
+spring.redis.host: localhost
+spring.redis.port: 50717
+
+server:
+  port: 8080
+
