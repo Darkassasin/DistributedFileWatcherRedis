@@ -30,7 +30,8 @@ A scalable, fault-tolerant file watcher service built with **Spring Boot** that 
  [ Watches File System ]          [ Watches File System ]
      │                                      │
      ▼                                      ▼
- [ Compute File Hash based on content]           [ Compute File Hash based on content]
+ [ Compute File Hash            [ Compute File Hash 
+   based on content]               based on content]
      │                                      │
      ▼                                      ▼
 [ Check Redis for Duplicates ]        [ Check Redis for Duplicates ]
@@ -44,7 +45,6 @@ Java 17
 Spring Boot
 Spring Integration / DevTools
 Redis (as central coordination store)
-Docker & Docker Compose
 🛠️ Setup & Run
 
 Prerequisites
@@ -53,7 +53,6 @@ Redis running locally or via Docker
 Maven
 
 🧪 How It Works
-
 Each instance watches a folder for new files.
 On file creation:
 It calculates the hash of the file based on Content 
@@ -67,8 +66,8 @@ This mechanism allows safe, distributed file processing even with multiple insta
 This service is built with horizontal scalability in mind.Redis acts as a central coordination point to keep state consistent across replicas.
 
 🧹 Future Enhancements
-
- - File processing retries and dead-letter handling
+ - Docker & Docker Compose
+ - File processing retries 
  - Hash expiration policies in Redis
  - File archiving/post-processing hooks 
  - Easily deployable in containers and orchestrated environments.
