@@ -30,10 +30,10 @@ A scalable, fault-tolerant file watcher service built with **Spring Boot** that 
  [ Watches File System ]          [ Watches File System ]
      │                                      │
      ▼                                      ▼
- [ Compute File Hash ]           [ Compute File Hash ]
+ [ Compute File Hash based on content]           [ Compute File Hash based on content]
      │                                      │
      ▼                                      ▼
-[ Check Redis for Dupes ]        [ Check Redis for Dupes ]
+[ Check Redis for Duplicates ]        [ Check Redis for Duplicates ]
      │                                      │
      ▼                                      ▼
 [ Process if New ]               [ Skip if Duplicate ]
