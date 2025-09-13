@@ -20,24 +20,22 @@ A scalable, fault-tolerant file watcher service built with **Spring Boot** that 
 
 
 ## 🏗️ Architecture Overview
+<p>
+  <strong>Architecture Diagram</strong><br>
+  <img src="design/distributedfilewatcher_architecture.png" alt="Distributed Filewatcher Architecture">
+</p>
+
+<p>
+  <strong>Sequence Diagram</strong><br>
+  <img src="design/distributedfilewatcher_sequence.png" alt="Distributed Filewatcher Sequence">
+</p>
+
+<p>
+  <strong>Flowchart Diagram</strong><br>
+  <img src="design/distributedfilewatcher_flowchart.png" alt="Distributed Filewatcher Flowchart">
+</p>
 
 ```text
-┌────────────┐      ┌────────────┐      ┌────────────┐
-│ Instance 1 │<────>│   Redis    │<────>│ Instance 2 │
-└────┬───────┘      └────────────┘      └────┬───────┘
-     │                                      │
-     ▼                                      ▼
- [ Watches File System ]          [ Watches File System ]
-     │                                      │
-     ▼                                      ▼
- [ Compute File Hash            [ Compute File Hash 
-   based on content]               based on content]
-     │                                      │
-     ▼                                      ▼
-[ Check Redis for Duplicates ]        [ Check Redis for Duplicates ]
-     │                                      │
-     ▼                                      ▼
-[ Process if New ]               [ Skip if Duplicate ]
 
 🧑‍💻 Tech Stack
 
